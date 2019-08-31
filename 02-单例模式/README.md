@@ -105,3 +105,25 @@ page1.show()
 page1.show()
 
 ```
+
+
+``` javascript
+// java中修复符private，外部无法访问，js中实现单例模式，可以不用将该类export出去给外部使用，而是导出一个单例函数，该单例函数包含该类的唯一实例
+
+class Cart = {
+
+}
+
+const getCart = (function() {
+    let cart
+    return function() {
+        if(!cart) {
+            cart = new Cart()
+        }
+        return cart
+    }
+})()
+
+export default getCart
+
+```
