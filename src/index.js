@@ -1,11 +1,4 @@
-class Test {
-    constructor(name) {
-        this.name = name
-    }
-    getName() {
-        return this.name
-    }
-}
+import App from './demo/App.js'
 
-let t = new Test('kk')
-alert(t.getName())
+let app = new App('app')
+app.init()

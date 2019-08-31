@@ -1,6 +1,5 @@
 import Item from './Item.js'
 
-// 代理模式
 function createDiscount(item) {
     // 用代理做折扣显示
     return new Proxy(item, {
@@ -16,7 +15,7 @@ function createDiscount(item) {
     })
 }
 
-// 工厂函数  工厂模式
+// 工厂函数
 export default function (list, itemData) {
     if (itemData.discount) {
         itemData = createDiscount(itemData)

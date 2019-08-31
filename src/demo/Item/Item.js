@@ -22,7 +22,7 @@ export default class Item {
         let $el = this.$el
         let $btn = $('<button>')
 
-        // 状态模式
+        // 状态管理
         let _this = this
         let fsm = new StateMachine({
             init: '加入购物车',
@@ -67,7 +67,7 @@ export default class Item {
         $el.append($btn)
     }
 
-    // 加入购物车 装饰器模式
+    // 加入购物车
     @log('add')
     addToCartHandle() {
         this.cart.add(this.data)

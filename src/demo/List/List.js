@@ -13,6 +13,7 @@ export default class List {
         // 使用 fetch （低版本浏览器可使用 https://github.com/github/fetch 兼容）
         // 返回 promise
         return fetch(GET_LIST).then(result => {
+            console.log(',,,,', result)
             return result.json()
         })
     }

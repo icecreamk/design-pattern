@@ -20,7 +20,7 @@ class Cart {
     }
 }
 
-// 单例模式
+// 返回单例
 let getCart = (function () {
     let cart
     return function () {

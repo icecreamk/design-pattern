@@ -1,4 +1,3 @@
-// 装饰器模式
 export function log(type) {
     return function (target, name, descriptor) {
         var oldValue = descriptor.value;
