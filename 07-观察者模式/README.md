@@ -8,6 +8,7 @@
 - jQuery callbacks
 - nodejs 自定义事件
 - React和Vue生命周期
+- vue ng 中的watch
 
 ### 设计原则
 - 主题（发布）和观察者（订阅）分离，不是主动触发而是被动监听，两者解耦
