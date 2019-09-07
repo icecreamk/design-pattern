@@ -17,7 +17,7 @@ class SingleObj {
     }
 }
 
-// 静态方法，直接通过类调用
+// 静态方法，直接通过类调用，不论类被new多少次，只会有一个getInstance静态方法
 SingleObj.getInstance = function () {
     // this指向该类而不是实例
     if(this.instance) {
