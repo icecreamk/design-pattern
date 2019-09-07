@@ -105,6 +105,7 @@ obj.foo()
 ### 装饰方法
 ```
 function readonly(target, name, descriptor) {
+    // descriptor属性描述对象（Object.definedProperty中用到）,原值如下
     // {
     //     value: '',
     //     enumerable: false,
