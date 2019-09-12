@@ -105,8 +105,11 @@ updateDom()
 ```
 
 #### 简单promise
-- Promise三者状态：`pedding fullfilled rejected`
-- `pedding->fullfilled / pedding->rejected` (不可逆向)
+- Promise三者状态：`pending fullfilled rejected`
+- `pending->fullfilled / pending->rejected` (不可逆向)
+- Promise是一个类Class
+- Promise实例化时接收一个函数，且函数携带两个参数，resolve、reject，成功则执行resolve，失败则执行reject
+- promise实例要有then方法，then接收两个函数参数，第一个是在resolve执行时触发执行，第二个在reject执行时触发执行
 
 ```
 import StateMachine from 'javascript-state-machine'
@@ -115,7 +118,7 @@ var fsm = new StateMachine({
     init: 'pending',
     transitions: [
         {
-            name: 'resolve',
+            name: 'resolve', // 事件名称
             from: 'pending',
             to: 'fullfilled'
         },
@@ -125,15 +128,12 @@ var fsm = new StateMachine({
             to: 'rejected'
         }
     ],
-    methods: {
-        // 成功
+    methods: { // 事件监听
+        // 参数：state - 当前状态示例; data - fsm.resolve(data) 执行时传递过来的参数
         onResolve: function (state, data) {
-            // 参数：state - 当前状态示例; data - fsm.resolve(xxx) 执行时传递过来的参数
             data.successList.forEach(fn => fn())
         },
-        // 失败
         onReject: function (state, data) {
-            // 参数：state - 当前状态示例; data - fsm.reject(xxx) 执行时传递过来的参数
             data.failList.forEach(fn => fn())
         }
     }
